@@ -2,6 +2,11 @@
 
 //colors
 $background-color: #f7f7fb;
+$sider-bg-color: #ffffff;
+
+$primary-color: #4a4a4a;
+$background-color: #f8f8f8;
+$hover-color: #e0e0e0;
 
 // typography
 $font-family: "Plus Jakarta Sans", sans-serif;
@@ -27,7 +32,7 @@ $font-weight: (
 @mixin three-column-layout($left: 280px, $right: 350px, $gap: 32px) {
   display: grid;
   grid-template-columns: $left 1fr $right;
-  grid-template-areas: "sider main right-sider";
+  grid-template-areas: "sidebar main right-sider";
   height: 100vh;
   gap: $gap;
 }

@@ -18,12 +18,60 @@ body {
 @include large-screen {
   .wrapper {
     @include three-column-layout();
-    .sider {
-      grid-area: sider;
-      .nav {
-        &__list {
-          display: flex;
-          flex-direction: column;
+    .sidebar {
+      grid-area: sidebar;
+      background: $sider-bg-color;
+      width: 280px;
+      height: 100vh;
+      padding: 32px 0;
+      &__logo {
+        background-color: #d9d9d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 14px 77px;
+        margin: 0 66px 0 36px;
+        img {
+          width: 80px;
+        }
+      }
+
+      &__nav {
+        flex-grow: 1;
+        margin: 32px 0;
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            a {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              padding: 20px 0 20px 49px;
+              text-decoration: none;
+              color: $primary-color;
+              font-weight: 500;
+              border-radius: 8px;
+
+              &:hover {
+                background: $hover-color;
+              }
+            }
+
+            &.active a {
+              font-weight: bold;
+              color: #0d163a;
+              // background: $hover-color;
+            }
+          }
+        }
+
+        hr {
+          margin: 10px 0;
+          border: none;
+          border-top: 1px solid #ddd;
         }
       }
     }
@@ -38,8 +86,13 @@ body {
 
 @include mobile-screen {
   .wrapper {
-    .sider {
+    .sidebar {
       display: none;
     }
   }
 }
+
+// &__top{
+//   @include body-1-bold;
+//   color: $army-green;
+// }

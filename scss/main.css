@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: #f7f7fb;
+  background-color: #f8f8f8;
 }
 
 * {
@@ -16,16 +16,58 @@ body {
   .wrapper {
     display: grid;
     grid-template-columns: 280px 1fr 350px;
-    grid-template-areas: "sider main right-sider";
+    grid-template-areas: "sidebar main right-sider";
     height: 100vh;
     gap: 32px;
   }
-  .wrapper .sider {
-    grid-area: sider;
+  .wrapper .sidebar {
+    grid-area: sidebar;
+    background: #ffffff;
+    width: 280px;
+    height: 100vh;
+    padding: 32px 0;
   }
-  .wrapper .sider .nav__list {
+  .wrapper .sidebar__logo {
+    background-color: #d9d9d9;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 77px;
+    margin: 0 66px 0 36px;
+  }
+  .wrapper .sidebar__logo img {
+    width: 80px;
+  }
+  .wrapper .sidebar__nav {
+    flex-grow: 1;
+    margin: 32px 0;
+  }
+  .wrapper .sidebar__nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .wrapper .sidebar__nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0 20px 49px;
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: 500;
+    border-radius: 8px;
+  }
+  .wrapper .sidebar__nav ul li a:hover {
+    background: #e0e0e0;
+  }
+  .wrapper .sidebar__nav ul li.active a {
+    font-weight: bold;
+    color: #0d163a;
+  }
+  .wrapper .sidebar__nav hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ddd;
   }
   .wrapper .main {
     grid-area: main;
@@ -35,7 +77,7 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
-  .wrapper .sider {
+  .wrapper .sidebar {
     display: none;
   }
 }/*# sourceMappingURL=main.css.map */
