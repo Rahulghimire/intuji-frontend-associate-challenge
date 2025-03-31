@@ -1,7 +1,45 @@
 @import "_base.scss";
+@import "_components.scss";
+
+html {
+  font-family: $font-family;
+}
+
+body {
+  background-color: $background-color;
+}
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+@include large-screen {
+  .wrapper {
+    @include three-column-layout();
+    .sider {
+      grid-area: sider;
+      .nav {
+        &__list {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+    .main {
+      grid-area: main;
+    }
+    .right-sider {
+      grid-area: right-sider;
+    }
+  }
+}
+
+@include mobile-screen {
+  .wrapper {
+    .sider {
+      display: none;
+    }
+  }
 }
