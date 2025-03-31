@@ -18,60 +18,91 @@ body {
 @include large-screen {
   .wrapper {
     @include three-column-layout();
+    .main {
+      .header {
+        .search-form {
+          display: flex;
+          align-items: center;
+          background: #f7f7fc;
+          padding: 10px 15px;
+          border-radius: 25px;
+          width: 100%;
+          max-width: 400px;
+
+          .search-icon {
+            margin-right: 10px;
+          }
+
+          input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex-grow: 1;
+            font-size: 16px;
+            color: #333;
+
+            &::placeholder {
+              color: #999;
+            }
+          }
+        }
+      }
+    }
     .sidebar {
       grid-area: sidebar;
       background: $sider-bg-color;
-      width: 280px;
-      height: 100vh;
-      padding: 32px 0;
+      width: 17.5rem;
+      // height: 100vh;
+      padding: 2rem 0;
       &__logo {
         background-color: #d9d9d9;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 14px 77px;
-        margin: 0 66px 0 36px;
+        padding: 0.875rem 4.8125rem;
+        margin: 0 4.125rem 0 2.25rem;
         img {
-          width: 80px;
+          cursor: pointer;
         }
       }
 
       &__nav {
         flex-grow: 1;
-        margin: 32px 0;
+        margin: 2rem 0;
         ul {
           list-style: none;
           padding: 0;
           margin: 0;
+          background: $sider-bg-color;
 
           li {
             a {
               display: flex;
               align-items: center;
-              gap: 16px;
-              padding: 20px 0 20px 49px;
+              gap: 1rem;
+              font-size: 1rem;
+              padding: 1.25rem 0 1.25rem 3.0625rem;
               text-decoration: none;
               color: $primary-color;
-              font-weight: 500;
-              border-radius: 8px;
-
+              font-weight: map-get($font-weight, "regular");
               &:hover {
                 background: $hover-color;
               }
             }
 
             &.active a {
-              font-weight: bold;
+              font-weight: map-get($font-weight, "semibold");
               color: #0d163a;
-              // background: $hover-color;
+              font-size: 1rem;
+              letter-spacing: 0.03em;
             }
           }
         }
 
         hr {
-          margin: 10px 0;
+          margin: 2rem 1.90625rem;
           border: none;
-          border-top: 1px solid #ddd;
+          border-top: 0.0625rem solid rgba(13, 22, 58, 0.3);
         }
       }
     }

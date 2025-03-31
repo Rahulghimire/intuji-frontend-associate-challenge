@@ -20,54 +20,79 @@ body {
     height: 100vh;
     gap: 32px;
   }
+  .wrapper .main .header .search-form {
+    display: flex;
+    align-items: center;
+    background: #f7f7fc;
+    padding: 10px 15px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+  }
+  .wrapper .main .header .search-form .search-icon {
+    margin-right: 10px;
+  }
+  .wrapper .main .header .search-form input {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+  }
+  .wrapper .main .header .search-form input::placeholder {
+    color: #999;
+  }
   .wrapper .sidebar {
     grid-area: sidebar;
     background: #ffffff;
-    width: 280px;
-    height: 100vh;
-    padding: 32px 0;
+    width: 17.5rem;
+    padding: 2rem 0;
   }
   .wrapper .sidebar__logo {
     background-color: #d9d9d9;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 14px 77px;
-    margin: 0 66px 0 36px;
+    padding: 0.875rem 4.8125rem;
+    margin: 0 4.125rem 0 2.25rem;
   }
   .wrapper .sidebar__logo img {
-    width: 80px;
+    cursor: pointer;
   }
   .wrapper .sidebar__nav {
     flex-grow: 1;
-    margin: 32px 0;
+    margin: 2rem 0;
   }
   .wrapper .sidebar__nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    background: #ffffff;
   }
   .wrapper .sidebar__nav ul li a {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 20px 0 20px 49px;
+    gap: 1rem;
+    font-size: 1rem;
+    padding: 1.25rem 0 1.25rem 3.0625rem;
     text-decoration: none;
     color: #4a4a4a;
-    font-weight: 500;
-    border-radius: 8px;
+    font-weight: 400;
   }
   .wrapper .sidebar__nav ul li a:hover {
     background: #e0e0e0;
   }
   .wrapper .sidebar__nav ul li.active a {
-    font-weight: bold;
+    font-weight: 600;
     color: #0d163a;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
   }
   .wrapper .sidebar__nav hr {
-    margin: 10px 0;
+    margin: 2rem 1.90625rem;
     border: none;
-    border-top: 1px solid #ddd;
+    border-top: 0.0625rem solid rgba(13, 22, 58, 0.3);
   }
   .wrapper .main {
     grid-area: main;

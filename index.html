@@ -14,36 +14,27 @@
     <div class="wrapper">
       <main class="main">
         <header class="header">
-          <div>
-            <input type="text" placeholder="Search Here" />
-          </div>
+          <form role="search" class="search-form">
+            <label for="search-input">
+              <img
+                src="/assets/search-normal.svg"
+                alt="Search Icon"
+                class="search-icon"
+                loading="eager"
+                width="20"
+                height="20"
+              />
+            </label>
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search here..."
+            />
+          </form>
+
           <div></div>
         </header>
       </main>
-
-      <!-- <section class="sider">
-        <figure>
-          <img src="/assets/gallery.svg" alt="Dashboard Logo" />
-        </figure>
-        <nav class="nav">
-          <ul class="nav__list">
-            <li><a href="/">Dashboard</a></li>
-            <li><a href="/schedule">Schedule</a></li>
-            <li><a href="/message">Message</a></li>
-            <li><a href="/analytics">Analytics</a></li>
-            <li><a href="/team">Team</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/settings">Settings</a></li>
-            <li><a href="/help">Help</a></li>
-            <li><a href="/logout">Logout</a></li>
-            <div>border</div>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/settings">Settings</a></li>
-            <li><a href="/help">Help</a></li>
-            <li><a href="/logout">Logout</a></li>
-          </ul>
-        </nav>
-      </section> -->
 
       <aside class="sidebar">
         <figure class="sidebar__logo">
@@ -59,56 +50,54 @@
           <ul>
             <li class="active">
               <a href="/">
-                <span class="icon">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M21.5 10.9V4.1C21.5 2.6 20.86 2 19.27 2H15.23C13.64 2 13 2.6 13 4.1V10.9C13 12.4 13.64 13 15.23 13H19.27C20.86 13 21.5 12.4 21.5 10.9Z"
-                      fill="#F9BA33"
-                    />
-                    <path
-                      d="M11 13.1V19.9C11 21.4 10.36 22 8.77 22H4.73C3.14 22 2.5 21.4 2.5 19.9V13.1C2.5 11.6 3.14 11 4.73 11H8.77C10.36 11 11 11.6 11 13.1Z"
-                      fill="#F9BA33"
-                    />
-                    <path
-                      d="M21.5 19.9V17.1C21.5 15.6 20.86 15 19.27 15H15.23C13.64 15 13 15.6 13 17.1V19.9C13 21.4 13.64 22 15.23 22H19.27C20.86 22 21.5 21.4 21.5 19.9Z"
-                      fill="#F9BA33"
-                    />
-                    <path
-                      d="M11 6.9V4.1C11 2.6 10.36 2 8.77 2H4.73C3.14 2 2.5 2.6 2.5 4.1V6.9C2.5 8.4 3.14 9 4.73 9H8.77C10.36 9 11 8.4 11 6.9Z"
-                      fill="#F9BA33"
-                    />
-                  </svg>
-                </span>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.5 10.9V4.1C21.5 2.6 20.86 2 19.27 2H15.23C13.64 2 13 2.6 13 4.1V10.9C13 12.4 13.64 13 15.23 13H19.27C20.86 13 21.5 12.4 21.5 10.9Z"
+                    fill="#F9BA33"
+                  />
+                  <path
+                    d="M11 13.1V19.9C11 21.4 10.36 22 8.77 22H4.73C3.14 22 2.5 21.4 2.5 19.9V13.1C2.5 11.6 3.14 11 4.73 11H8.77C10.36 11 11 11.6 11 13.1Z"
+                    fill="#F9BA33"
+                  />
+                  <path
+                    d="M21.5 19.9V17.1C21.5 15.6 20.86 15 19.27 15H15.23C13.64 15 13 15.6 13 17.1V19.9C13 21.4 13.64 22 15.23 22H19.27C20.86 22 21.5 21.4 21.5 19.9Z"
+                    fill="#F9BA33"
+                  />
+                  <path
+                    d="M11 6.9V4.1C11 2.6 10.36 2 8.77 2H4.73C3.14 2 2.5 2.6 2.5 4.1V6.9C2.5 8.4 3.14 9 4.73 9H8.77C10.36 9 11 8.4 11 6.9Z"
+                    fill="#F9BA33"
+                  />
+                </svg>
                 <span class="text">Dashboard</span>
               </a>
             </li>
             <li>
               <a href="/schedule">
-                <span class="icon">📅</span>
+                <img src="/assets/Calendar.svg" alt="Schedule Icon" />
                 <span class="text">Schedule</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="icon">✉️</span>
+                <img src="/assets/sms.svg" alt="Message Icon" />
                 <span class="text">Message</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="icon">📈</span>
+                <img src="/assets/Chart.svg" alt="Analytics Icon" />
                 <span class="text">Analytics</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="icon">👥</span>
+                <img src="/assets/profile-2user.svg" alt="Team Icon" />
                 <span class="text">Team</span>
               </a>
             </li>
@@ -117,28 +106,27 @@
           <ul>
             <li>
               <a href="#">
-                <span class="icon">👤</span>
+                <img src="/assets/user.svg" alt="Profile Icon" />
                 <span class="text">Profile</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="icon">⚙️</span>
+                <img src="/assets/setting.svg" alt="Setting Icon" />
                 <span class="text">Settings</span>
               </a>
             </li>
           </ul>
-          <hr />
           <ul>
             <li>
               <a href="#">
-                <span class="icon">❓</span>
+                <img src="/assets/info-circle.svg" alt="Help Icon" />
                 <span class="text">Help</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="icon">🔓</span>
+                <img src="/assets/logout.svg" alt="Logout Icon" />
                 <span class="text">Logout</span>
               </a>
             </li>

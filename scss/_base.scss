@@ -4,6 +4,7 @@
 $background-color: #f7f7fb;
 $sider-bg-color: #ffffff;
 
+//navigation colors
 $primary-color: #4a4a4a;
 $background-color: #f8f8f8;
 $hover-color: #e0e0e0;
@@ -28,6 +29,8 @@ $font-weight: (
     @content;
   }
 }
+
+// layout
 
 @mixin three-column-layout($left: 280px, $right: 350px, $gap: 32px) {
   display: grid;
