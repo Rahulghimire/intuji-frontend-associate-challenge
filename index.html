@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="scss/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -40,7 +41,7 @@
                   <h3 class="card__title">Your Balance</h3>
                   <p class="card__comparison">
                     <img
-                      src="/assets/export-1.svg"
+                      src="/assets/export-balance.svg"
                       alt="comparison-img"
                       class="card__comparison-icon"
                     />
@@ -58,13 +59,13 @@
               <article class="card card--balance">
                 <div class="card__header">
                   <div class="card__icon">
-                    <img src="/assets/empty-wallet.svg" alt="Wallet Icon" />
+                    <img src="/assets/save-2.svg" alt="Wallet Icon" />
                   </div>
                   <div class="card__info">
                     <h3 class="card__title">Saving</h3>
                     <p class="card__comparison">
                       <img
-                        src="/assets/export-1.svg"
+                        src="/assets/export.svg"
                         alt="comparison-img"
                         class="card__comparison-icon"
                       />
@@ -74,7 +75,7 @@
                 </div>
                 <hr class="card__divider" />
                 <div class="card__footer">
-                  <p class="card__amount">$28,891.138</p>
+                  <p class="card__amount">$ 1,050.44</p>
                   <img src="/assets/arrow-right-black.svg" alt="Arrow Icon" />
                 </div>
               </article>
@@ -83,23 +84,23 @@
               <article class="card card--balance">
                 <div class="card__header">
                   <div class="card__icon">
-                    <img src="/assets/empty-wallet.svg" alt="Wallet Icon" />
+                    <img src="/assets/direct-up.svg" alt="Wallet Icon" />
                   </div>
                   <div class="card__info">
-                    <h3 class="card__title">Saving</h3>
+                    <h3 class="card__title">Expenses</h3>
                     <p class="card__comparison">
                       <img
                         src="/assets/export-1.svg"
                         alt="comparison-img"
                         class="card__comparison-icon"
                       />
-                      10 % compared with last month
+                      2 % compared with last montg
                     </p>
                   </div>
                 </div>
                 <hr class="card__divider" />
                 <div class="card__footer">
-                  <p class="card__amount">$28,891.138</p>
+                  <p class="card__amount">$ 200.31</p>
                   <img src="/assets/arrow-right-black.svg" alt="Arrow Icon" />
                 </div>
               </article>
@@ -108,28 +109,33 @@
               <article class="card card--balance">
                 <div class="card__header">
                   <div class="card__icon">
-                    <img src="/assets/empty-wallet.svg" alt="Wallet Icon" />
+                    <img src="/assets/direct-down.svg" alt="Wallet Icon" />
                   </div>
                   <div class="card__info">
-                    <h3 class="card__title">Saving</h3>
+                    <h3 class="card__title">Incomes</h3>
                     <p class="card__comparison">
                       <img
-                        src="/assets/export-1.svg"
+                        src="/assets/export-2.svg"
                         alt="comparison-img"
                         class="card__comparison-icon"
                       />
-                      10 % compared with last month
+                      8 % compared with last month
                     </p>
                   </div>
                 </div>
                 <hr class="card__divider" />
                 <div class="card__footer">
-                  <p class="card__amount">$28,891.138</p>
+                  <p class="card__amount">$ 21,121.0</p>
                   <img src="/assets/arrow-right-black.svg" alt="Arrow Icon" />
                 </div>
               </article>
             </section>
           </div>
+        </section>
+
+        <section class="analytics">
+          <h2 class="analytics__title">Analytics</h2>
+          <canvas id="analyticsChart"></canvas>
         </section>
       </main>
 
@@ -232,7 +238,23 @@
       </aside>
 
       <aside class="right-sider">
-        <section>this is a aide</section>
+        <nav class="profile-nav">
+          <div class="nav-icons">
+            <img
+              src="/assets//notification-bing.svg"
+              alt="notification-bing"
+              class="notification-icon"
+            />
+          </div>
+          <div class="nav-icons">
+            <img
+              src="/assets//notification-bing.svg"
+              alt="notification-bing"
+              class="Message"
+            />
+          </div>
+          <div>3</div>
+        </nav>
         <section></section>
       </aside>
     </div>
