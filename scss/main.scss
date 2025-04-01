@@ -23,8 +23,6 @@ body {
       display: flex;
       align-items: center;
       background: #ffffff;
-
-      // padding: 0.625rem 0.9375rem;
       padding: 20px;
 
       border-radius: 2rem;
@@ -133,6 +131,9 @@ body {
     @include three-column-layout();
     .main {
       grid-area: main;
+      .hamburger {
+        display: none;
+      }
 
       .overview {
         background-color: #fff;
@@ -258,8 +259,149 @@ body {
 
 @include mobile-screen {
   .wrapper {
+    .hamburger {
+      padding: 10px;
+      margin: 4px;
+      float: right;
+    }
     .sidebar {
-      display: none;
+      position: fixed;
+      left: -350px;
+      top: 0;
+      width: 250px;
+      height: 100vh;
+      background: white;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      transition: left 0.3s ease-in-out;
+      &.open {
+        left: 0;
+      }
+    }
+    .analytics {
+      .legend {
+        display: block;
+      }
+    }
+    .main {
+      grid-area: main;
+
+      .overview {
+        background-color: #fff;
+        margin-top: 1rem;
+        border-radius: 14px;
+        padding: 1rem;
+        &__title {
+          @include section-header;
+          margin-bottom: 2rem;
+        }
+
+        &__cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(333px, 1fr));
+          gap: 18px;
+        }
+      }
+    }
+    .sidebar {
+      grid-area: sidebar;
+      padding: 1rem 0;
+      background: $sider-bg-color;
+      width: 17.5rem;
+      // padding: 2rem 0;
+      &__logo {
+        background-color: #d9d9d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.875rem 4.8125rem;
+        margin: 0 4.125rem 0 2.25rem;
+        img {
+          cursor: pointer;
+        }
+      }
+
+      &__nav {
+        flex-grow: 1;
+        margin: 1rem 0;
+        &--bottom {
+          margin-top: auto;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          background: $sider-bg-color;
+
+          li {
+            a {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              font-size: 1rem;
+              padding: 1.25rem 0 1.25rem 3.0625rem;
+              text-decoration: none;
+              color: $primary-color;
+              font-weight: map-get($font-weight, "regular");
+              &:hover {
+                background: $hover-color;
+              }
+            }
+            &.active {
+              border-left: 4px solid #4745a4; // Adjust color as needed
+
+              a {
+                font-weight: map-get($font-weight, "semibold");
+                color: #0d163a;
+                font-size: 1rem;
+                letter-spacing: 0.03em;
+              }
+            }
+          }
+        }
+
+        hr {
+          @include custom-margin-border();
+        }
+      }
+    }
+
+    .right-sider {
+      grid-area: right-sider;
+      margin-top: 1rem;
+      .right-sider-container {
+        display: flex;
+        gap: 32px;
+        flex-direction: column;
+      }
+      .profile-nav {
+        padding: 8px;
+        display: flex;
+        background-color: #ffffff;
+        border-radius: 100px;
+        gap: 10px;
+        .nav-icons {
+          padding: 12px 21px;
+          border: 1px solid #dedede;
+          border-radius: 30px;
+        }
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          &__name {
+            color: rgba(13, 22, 58, 1);
+            font-weight: 400;
+            font-size: 16px;
+            white-space: nowrap;
+          }
+          &__profile {
+            padding: 12.5px;
+            border-radius: 50%;
+            border: 1px solid #dedede;
+            background-color: rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
     }
   }
 }
