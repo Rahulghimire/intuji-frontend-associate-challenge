@@ -47,7 +47,7 @@
   }
 }
 
-.card-saving {
+.card {
   @include card-style("", 1px solid rgba(222, 222, 222, 0.7));
 
   @include common-card-utility;

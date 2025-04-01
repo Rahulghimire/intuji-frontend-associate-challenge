@@ -67,7 +67,7 @@
   border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
 }
 
-.card-saving {
+.card {
   background: "";
   color: white;
   border-radius: 14px;
@@ -76,27 +76,27 @@
   display: flex;
   flex-direction: column;
 }
-.card-saving:hover {
+.card:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease-in-out;
 }
-.card-saving--balance {
+.card--balance {
   display: flex;
   flex-direction: column;
 }
-.card-saving__info {
+.card__info {
   display: flex;
   flex-direction: column;
 }
-.card-saving__comparison-icon {
+.card__comparison-icon {
   margin-right: 4px;
 }
-.card-saving__header {
+.card__header {
   display: flex;
   align-items: center;
   gap: 9px;
 }
-.card-saving__icon {
+.card__icon {
   border: 1px solid rgba(222, 222, 222, 0.2);
   border-radius: 50%;
   display: flex;
@@ -104,12 +104,12 @@
   justify-content: center;
   padding: 8px;
 }
-.card-saving__title {
+.card__title {
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 9px;
 }
-.card-saving__comparison {
+.card__comparison {
   display: flex;
   align-items: center;
   color: #ffffff;
@@ -118,19 +118,19 @@
   font-size: 12px;
   opacity: 0.6;
 }
-.card-saving__footer {
+.card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.card-saving__amount {
+.card__amount {
   color: #fff;
   letter-spacing: -2px;
   font-size: 28px;
   font-weight: 600;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-.card-saving__divider {
+.card__divider {
   margin: 21.25px 0 21.25px 0;
   border: none;
   border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
