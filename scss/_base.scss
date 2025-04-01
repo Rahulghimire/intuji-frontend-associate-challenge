@@ -19,12 +19,12 @@ $font-weight: (
 );
 
 //color variables for saving plan
-$blue: #4a90e2;
+$blue: #4745a4;
 $orange: #f5a623;
 $green: #7ed321;
 $background: #f5f7fa;
-$text-primary: #333;
-$text-secondary: #888;
+$text-primary: #0d163a;
+$text-secondary: rgba(13, 22, 58, 0.6);
 
 // layout
 @mixin three-column-layout($left: 280px, $right: 350px, $gap: 32px) {
@@ -63,6 +63,13 @@ $text-secondary: #888;
   letter-spacing: -0.0625rem;
   font-weight: 700;
   color: #0d163a;
+}
+
+@mixin percentage {
+  font-weight: map-get($font-weight, "semibold");
+  font-size: 18px;
+  text-align: right;
+  letter-spacing: -1px;
 }
 
 @mixin common-card-utility {

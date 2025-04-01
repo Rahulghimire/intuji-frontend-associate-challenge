@@ -134,8 +134,19 @@
         </section>
 
         <section class="analytics">
-          <h2 class="analytics__title">Analytics</h2>
-          <canvas id="analyticsChart"></canvas>
+          <div class="header">
+            <h1>Analytics</h1>
+            <div class="dropdown">
+              <select>
+                <option>Weekly</option>
+                <option>Daily</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="analyticsChart"></canvas>
+          </div>
         </section>
       </main>
 
@@ -220,7 +231,7 @@
               </a>
             </li>
           </ul>
-          <ul>
+          <ul class="sidebar__nav--bottom">
             <li>
               <a href="#">
                 <img src="/assets/info-circle.svg" alt="Help Icon" />
@@ -264,50 +275,64 @@
               <img src="/assets/arrow-down.svg" alt="arrow-down" />
             </div>
           </nav>
-          <section>
-            <div class="savings-container">
-              <div class="header">
-                <h2>Saving Plan</h2>
-                <a href="#" class="see-all">SEE ALL</a>
+          <section class="savings-container">
+            <div class="header">
+              <h2>Saving Plan</h2>
+              <a href="#" class="see-all">See All</a>
+            </div>
+            <hr />
+            <div class="savings-item">
+              <div class="savings-info">
+                <span class="title">Bali Vacation</span>
+                <span class="date">Target: August 25 2022</span>
               </div>
-              <div class="savings-item">
-                <div class="savings-info">
-                  <span class="title">Bali Vacation</span>
-                  <span class="date">Target: August 25 2022</span>
+              <div class="savings-amount">
+                <div>
+                  <span class="current">$1950.21</span>
+                  <sub> / $4000 </sub>
                 </div>
-                <div class="savings-amount">
-                  <span class="current">$1950.21</span> / $4000
+                <div>
+                  <span class="percentage blue">48%</span>
                 </div>
-                <div class="progress-bar">
-                  <div class="progress blue" style="width: 48%"></div>
-                </div>
-                <div class="percentage">48%</div>
               </div>
-              <div class="savings-item">
-                <div class="savings-info">
-                  <span class="title">New Gadget</span>
-                  <span class="date">Target: August 25 2022</span>
-                </div>
-                <div class="savings-amount">
-                  <span class="current">$790.21</span> / $1000
-                </div>
-                <div class="progress-bar">
-                  <div class="progress orange" style="width: 79%"></div>
-                </div>
-                <div class="percentage">79%</div>
+              <div class="progress-bar">
+                <div class="progress blue"></div>
               </div>
-              <div class="savings-item">
-                <div class="savings-info">
-                  <span class="title">Charity</span>
-                  <span class="date">Target: August 25 2022</span>
+            </div>
+            <div class="savings-item">
+              <div class="savings-info">
+                <span class="title">New Gadget</span>
+                <span class="date">Target: August 25 2022</span>
+              </div>
+              <div class="savings-amount">
+                <div>
+                  <span class="current">$1950.21</span>
+                  <sub> / $4000 </sub>
                 </div>
-                <div class="savings-amount">
-                  <span class="current">$32.111</span> / $100
+                <div>
+                  <span class="percentage orange">79%</span>
                 </div>
-                <div class="progress-bar">
-                  <div class="progress green" style="width: 32%"></div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress orange" style="width: 79%"></div>
+              </div>
+            </div>
+            <div class="savings-item">
+              <div class="savings-info">
+                <span class="title">Charity</span>
+                <span class="date">Target: August 25 2022</span>
+              </div>
+              <div class="savings-amount">
+                <div>
+                  <span class="current">$1950.21</span>
+                  <sub> / $4000 </sub>
                 </div>
-                <div class="percentage">32%</div>
+                <div>
+                  <span class="percentage green">79%</span>
+                </div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress green" style="width: 32%"></div>
               </div>
             </div>
           </section>
@@ -315,8 +340,9 @@
             <div class="transaction-container">
               <div class="transaction-header">
                 <h2>Recent Transaction</h2>
-                <a href="#" class="see-all">See ALL</a>
+                <a href="#" class="see-all">See All</a>
               </div>
+              <hr />
               <div class="transaction-list">
                 <div class="transaction-item">
                   <div class="profile-pic">👤</div>

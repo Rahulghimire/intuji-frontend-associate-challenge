@@ -15,53 +15,92 @@ body {
   box-sizing: border-box;
 }
 
-.header {
-  .search__form {
-    display: flex;
-    align-items: center;
-    background: #ffffff;
-    padding: 0.625rem 0.9375rem;
-    border-radius: 2rem;
-    width: 100%;
-    .search__icon {
-      margin-right: 0.625rem;
-    }
+.main {
+  .header {
+    margin-top: 2rem;
 
-    input {
-      border: none;
-      background: transparent;
-      outline: none;
-      flex-grow: 1;
-      font-size: 1rem;
-      color: #667085;
+    .search__form {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
 
-      &::placeholder {
+      // padding: 0.625rem 0.9375rem;
+      padding: 20px;
+
+      border-radius: 2rem;
+      width: 100%;
+      .search__icon {
+        margin-right: 10px;
+      }
+
+      input {
+        border: none;
+        background: transparent;
+        outline: none;
+        flex-grow: 1;
+        font-size: 1rem;
         color: #667085;
+
+        &::placeholder {
+          color: #667085;
+        }
       }
     }
   }
 }
 
-@include large-screen {
-  .wrapper {
-    @include three-column-layout();
-    padding: 2rem 2rem;
-    .main {
-      grid-area: main;
-      .analytics {
-        background-color: #fff;
-        margin-top: 2rem;
-        max-height: 304px;
-        max-width: 99%;
-        padding: 1rem;
-        &__title {
-          @include section-header;
-          margin-bottom: 2rem;
+.analytics {
+  background-color: #fff;
+  margin-top: 2rem;
+  padding: 20px;
+  border-radius: 14px;
+  &__title {
+    @include section-header;
+    margin-bottom: 2rem;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      @include section-header;
+      margin-bottom: 2rem;
+    }
+
+    .dropdown {
+      select {
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+          background-color: #f0f0f0;
         }
       }
+    }
+  }
+  .chart-container {
+    background-color: #fff;
+    height: 304px;
+  }
+}
+
+@include large-screen {
+  .wrapper {
+    padding: 0 2rem 0 0;
+    @include three-column-layout();
+    .main {
+      grid-area: main;
+
       .overview {
         background-color: #fff;
         margin-top: 2rem;
+        border-radius: 14px;
         padding: 1rem;
         &__title {
           @include section-header;
@@ -74,19 +113,10 @@ body {
           gap: 18px;
         }
       }
-
-      .analytics {
-        background-color: #fff;
-        margin-top: 2rem;
-        padding: 1rem;
-        &__title {
-          @include section-header;
-          margin-bottom: 2rem;
-        }
-      }
     }
     .sidebar {
       grid-area: sidebar;
+      padding: 2rem 0;
       background: $sider-bg-color;
       width: 17.5rem;
       // padding: 2rem 0;
@@ -105,6 +135,9 @@ body {
       &__nav {
         flex-grow: 1;
         margin: 2rem 0;
+        &--bottom {
+          margin-top: auto;
+        }
         ul {
           list-style: none;
           padding: 0;
@@ -125,12 +158,15 @@ body {
                 background: $hover-color;
               }
             }
+            &.active {
+              border-left: 4px solid #4745a4; // Adjust color as needed
 
-            &.active a {
-              font-weight: map-get($font-weight, "semibold");
-              color: #0d163a;
-              font-size: 1rem;
-              letter-spacing: 0.03em;
+              a {
+                font-weight: map-get($font-weight, "semibold");
+                color: #0d163a;
+                font-size: 1rem;
+                letter-spacing: 0.03em;
+              }
             }
           }
         }
@@ -143,7 +179,7 @@ body {
 
     .right-sider {
       grid-area: right-sider;
-      // padding: 2rem 0;
+      margin-top: 2rem;
       .right-sider-container {
         display: flex;
         gap: 32px;
@@ -152,6 +188,8 @@ body {
       .profile-nav {
         padding: 8px;
         display: flex;
+        background-color: #ffffff;
+        border-radius: 100px;
         // justify-content: space-between;
         gap: 10px;
         .nav-icons {
@@ -189,162 +227,134 @@ body {
   }
 }
 
-.chart-container {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  height: 304px;
+.savings-container {
+  background: #fff;
+  border-radius: 10px;
+  border-radius: 14px;
+  padding: 16px;
 
-  h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
+  hr {
+    margin: 24px 0px;
+    border: none;
+    border-top: 0.0625rem solid rgba(13, 22, 58, 0.1);
   }
 
-  .chart-header {
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 
-    .legend {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    h2 {
+      @include section-header;
+      font-size: 20px;
+    }
 
-      .dot {
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        display: inline-block;
+    .see-all {
+      font-size: 16px;
+      color: $blue;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .savings-item {
+    padding: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    .savings-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+
+      .title {
+        font-size: 16px;
+        font-weight: medium;
+        color: $text-primary;
+      }
+
+      .date {
+        font-size: 12px;
+        color: $text-secondary;
+      }
+    }
+
+    .savings-amount {
+      font-size: 14px;
+      color: rgba(13, 22, 58, 0.5);
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: map-get($font-weight, "semibold");
+
+      .current {
+        color: $text-primary;
+        font-weight: map-get($font-weight, "semibold");
+        font-size: 20px;
+        letter-spacing: -1px;
+      }
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 5px;
+
+      .progress {
+        height: 100%;
+        transition: width 0.3s ease;
+        width: 48%;
+        border-radius: 10px;
 
         &.blue {
-          background-color: #4a90e2;
+          background: $blue;
         }
 
         &.orange {
-          background-color: #f5a623;
+          background: $orange;
+        }
+
+        &.green {
+          background: $green;
         }
       }
     }
 
-    select {
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      background-color: #f9f9f9;
-      cursor: pointer;
-    }
-  }
-}
-
-.savings-container {
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-}
-
-// &__title {
-//   @include section-header;
-//   margin-bottom: 2rem;
-// }
-
-// Header styles
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-
-  h2 {
-    @include section-header;
-    font-size: 20px;
-  }
-
-  .see-all {
-    font-size: 12px;
-    color: $blue;
-    text-decoration: none;
-    font-weight: bold;
-  }
-}
-
-// Savings item styles
-.savings-item {
-  margin-bottom: 20px;
-
-  .savings-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-
-    .title {
-      font-size: 16px;
-      font-weight: bold;
+    .percentage {
       color: $text-primary;
+      @include percentage;
     }
-
-    .date {
-      font-size: 12px;
-      color: $text-secondary;
+    .percentage.orange {
+      color: $orange;
     }
-  }
-
-  .savings-amount {
-    font-size: 14px;
-    color: $text-secondary;
-    margin-bottom: 5px;
-
-    .current {
-      color: $text-primary;
-      font-weight: bold;
+    .percentage.green {
+      color: $green;
     }
-  }
-
-  .progress-bar {
-    width: 100%;
-    height: 8px;
-    background: #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 5px;
-
-    .progress {
-      height: 100%;
-      transition: width 0.3s ease;
-
-      &.blue {
-        background: $blue;
-      }
-
-      &.orange {
-        background: $orange;
-      }
-
-      &.green {
-        background: $green;
-      }
-    }
-  }
-
-  .percentage {
-    font-size: 14px;
-    font-weight: bold;
-    color: $text-primary;
-    text-align: right;
   }
 }
 
 .transaction-container {
-  max-width: 400px;
-  margin: 20px auto;
+  margin: 16px;
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
   padding: 20px;
+  .transaction-item {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+  hr {
+    margin: 24px 0px;
+    border: none;
+    border-top: 0.0625rem solid rgba(13, 22, 58, 0.1);
+  }
 
   .transaction-header {
     display: flex;
@@ -353,15 +363,13 @@ body {
     margin-bottom: 20px;
 
     h2 {
-      font-size: 18px;
-      font-weight: 600;
-      color: #333;
-      margin: 0;
+      @include section-header;
+      font-size: 20px;
     }
 
     .see-all {
-      font-size: 14px;
-      color: #6b48ff;
+      font-size: 16px;
+      color: $blue;
       text-decoration: none;
       font-weight: 500;
 
@@ -397,14 +405,17 @@ body {
         flex: 1;
 
         .name {
-          font-size: 16px;
-          font-weight: 500;
-          color: #333;
+          font-size: 18px;
+          font-weight: 600;
+          color: #0d163a;
+          margin-bottom: 4px;
         }
 
         .date {
           font-size: 12px;
-          color: #888;
+          color: #0d163a;
+          letter-spacing: -1px;
+          opacity: 0.5;
         }
       }
 
@@ -412,14 +423,16 @@ body {
         text-align: right;
 
         .amount {
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 500;
-          color: #333;
+          color: #0d163a;
         }
 
         .status {
           font-size: 12px;
-          color: #28a745;
+          color: #3bbb6e;
+          letter-spacing: -1px;
+          font-weight: 600;
 
           &.completed {
             color: #28a745;

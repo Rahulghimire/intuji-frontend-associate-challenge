@@ -151,18 +151,21 @@ body {
   box-sizing: border-box;
 }
 
-.header .search__form {
+.main .header {
+  margin-top: 2rem;
+}
+.main .header .search__form {
   display: flex;
   align-items: center;
   background: #ffffff;
-  padding: 0.625rem 0.9375rem;
+  padding: 20px;
   border-radius: 2rem;
   width: 100%;
 }
-.header .search__form .search__icon {
-  margin-right: 0.625rem;
+.main .header .search__form .search__icon {
+  margin-right: 10px;
 }
-.header .search__form input {
+.main .header .search__form input {
   border: none;
   background: transparent;
   outline: none;
@@ -170,42 +173,68 @@ body {
   font-size: 1rem;
   color: #667085;
 }
-.header .search__form input::-moz-placeholder {
+.main .header .search__form input::placeholder {
   color: #667085;
 }
-.header .search__form input::placeholder {
-  color: #667085;
+
+.analytics {
+  background-color: #fff;
+  margin-top: 2rem;
+  padding: 20px;
+  border-radius: 14px;
+}
+.analytics__title {
+  font-size: 1.25rem;
+  letter-spacing: -0.0625rem;
+  font-weight: 700;
+  color: #0d163a;
+  margin-bottom: 2rem;
+}
+.analytics .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.analytics .header h1 {
+  font-size: 1.25rem;
+  letter-spacing: -0.0625rem;
+  font-weight: 700;
+  color: #0d163a;
+  margin-bottom: 2rem;
+}
+.analytics .header .dropdown select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+.analytics .header .dropdown select:hover {
+  background-color: #f0f0f0;
+}
+.analytics .chart-container {
+  background-color: #fff;
+  height: 304px;
 }
 
 @media screen and (min-width: 768px) {
   .wrapper {
+    padding: 0 2rem 0 0;
     display: grid;
     grid-template-columns: 280px 1fr 350px;
     grid-template-areas: "sidebar main right-sider";
     height: 100vh;
     gap: 32px;
-    padding: 2rem 2rem;
   }
   .wrapper .main {
     grid-area: main;
   }
-  .wrapper .main .analytics {
-    background-color: #fff;
-    margin-top: 2rem;
-    max-height: 304px;
-    max-width: 99%;
-    padding: 1rem;
-  }
-  .wrapper .main .analytics__title {
-    font-size: 1.25rem;
-    letter-spacing: -0.0625rem;
-    font-weight: 700;
-    color: #0d163a;
-    margin-bottom: 2rem;
-  }
   .wrapper .main .overview {
     background-color: #fff;
     margin-top: 2rem;
+    border-radius: 14px;
     padding: 1rem;
   }
   .wrapper .main .overview__title {
@@ -220,20 +249,9 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(333px, 1fr));
     gap: 18px;
   }
-  .wrapper .main .analytics {
-    background-color: #fff;
-    margin-top: 2rem;
-    padding: 1rem;
-  }
-  .wrapper .main .analytics__title {
-    font-size: 1.25rem;
-    letter-spacing: -0.0625rem;
-    font-weight: 700;
-    color: #0d163a;
-    margin-bottom: 2rem;
-  }
   .wrapper .sidebar {
     grid-area: sidebar;
+    padding: 2rem 0;
     background: #ffffff;
     width: 17.5rem;
   }
@@ -251,6 +269,9 @@ body {
   .wrapper .sidebar__nav {
     flex-grow: 1;
     margin: 2rem 0;
+  }
+  .wrapper .sidebar__nav--bottom {
+    margin-top: auto;
   }
   .wrapper .sidebar__nav ul {
     list-style: none;
@@ -271,6 +292,9 @@ body {
   .wrapper .sidebar__nav ul li a:hover {
     background: #e0e0e0;
   }
+  .wrapper .sidebar__nav ul li.active {
+    border-left: 4px solid #4745a4;
+  }
   .wrapper .sidebar__nav ul li.active a {
     font-weight: 600;
     color: #0d163a;
@@ -284,6 +308,7 @@ body {
   }
   .wrapper .right-sider {
     grid-area: right-sider;
+    margin-top: 2rem;
   }
   .wrapper .right-sider .right-sider-container {
     display: flex;
@@ -293,6 +318,8 @@ body {
   .wrapper .right-sider .profile-nav {
     padding: 8px;
     display: flex;
+    background-color: #ffffff;
+    border-radius: 100px;
     gap: 10px;
   }
   .wrapper .right-sider .profile-nav .nav-icons {
@@ -323,138 +350,121 @@ body {
     display: none;
   }
 }
-.chart-container {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  height: 304px;
-}
-.chart-container h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
-}
-.chart-container .chart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.chart-container .chart-header .legend {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.chart-container .chart-header .legend .dot {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.chart-container .chart-header .legend .dot.blue {
-  background-color: #4a90e2;
-}
-.chart-container .chart-header .legend .dot.orange {
-  background-color: #f5a623;
-}
-.chart-container .chart-header select {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-  cursor: pointer;
-}
-
 .savings-container {
-  margin: 0 auto;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
   padding: 16px;
 }
-
-.header {
+.savings-container hr {
+  margin: 24px 0px;
+  border: none;
+  border-top: 0.0625rem solid rgba(13, 22, 58, 0.1);
+}
+.savings-container .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
-.header h2 {
+.savings-container .header h2 {
   font-size: 1.25rem;
   letter-spacing: -0.0625rem;
   font-weight: 700;
   color: #0d163a;
   font-size: 20px;
 }
-.header .see-all {
-  font-size: 12px;
-  color: #4a90e2;
+.savings-container .header .see-all {
+  font-size: 16px;
+  color: #4745a4;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
-
-.savings-item {
-  margin-bottom: 20px;
+.savings-container .savings-item {
+  padding: 8px;
 }
-.savings-item .savings-info {
+.savings-container .savings-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+.savings-container .savings-item .savings-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: 14px;
 }
-.savings-item .savings-info .title {
+.savings-container .savings-item .savings-info .title {
   font-size: 16px;
-  font-weight: bold;
-  color: #333;
+  font-weight: medium;
+  color: #0d163a;
 }
-.savings-item .savings-info .date {
+.savings-container .savings-item .savings-info .date {
   font-size: 12px;
-  color: #888;
+  color: rgba(13, 22, 58, 0.6);
 }
-.savings-item .savings-amount {
+.savings-container .savings-item .savings-amount {
   font-size: 14px;
-  color: #888;
-  margin-bottom: 5px;
+  color: rgba(13, 22, 58, 0.5);
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
 }
-.savings-item .savings-amount .current {
-  color: #333;
-  font-weight: bold;
+.savings-container .savings-item .savings-amount .current {
+  color: #0d163a;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -1px;
 }
-.savings-item .progress-bar {
+.savings-container .savings-item .progress-bar {
   width: 100%;
   height: 8px;
   background: #e0e0e0;
-  border-radius: 4px;
+  border-radius: 10px;
   overflow: hidden;
   margin-bottom: 5px;
 }
-.savings-item .progress-bar .progress {
+.savings-container .savings-item .progress-bar .progress {
   height: 100%;
   transition: width 0.3s ease;
+  width: 48%;
+  border-radius: 10px;
 }
-.savings-item .progress-bar .progress.blue {
-  background: #4a90e2;
+.savings-container .savings-item .progress-bar .progress.blue {
+  background: #4745a4;
 }
-.savings-item .progress-bar .progress.orange {
+.savings-container .savings-item .progress-bar .progress.orange {
   background: #f5a623;
 }
-.savings-item .progress-bar .progress.green {
+.savings-container .savings-item .progress-bar .progress.green {
   background: #7ed321;
 }
-.savings-item .percentage {
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
+.savings-container .savings-item .percentage {
+  color: #0d163a;
+  font-weight: 600;
+  font-size: 18px;
   text-align: right;
+  letter-spacing: -1px;
+}
+.savings-container .savings-item .percentage.orange {
+  color: #f5a623;
+}
+.savings-container .savings-item .percentage.green {
+  color: #7ed321;
 }
 
 .transaction-container {
-  max-width: 400px;
-  margin: 20px auto;
+  margin: 16px;
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
   padding: 20px;
+}
+.transaction-container .transaction-item:not(:last-child) {
+  margin-bottom: 25px;
+}
+.transaction-container hr {
+  margin: 24px 0px;
+  border: none;
+  border-top: 0.0625rem solid rgba(13, 22, 58, 0.1);
 }
 .transaction-container .transaction-header {
   display: flex;
@@ -463,14 +473,15 @@ body {
   margin-bottom: 20px;
 }
 .transaction-container .transaction-header h2 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: -0.0625rem;
+  font-weight: 700;
+  color: #0d163a;
+  font-size: 20px;
 }
 .transaction-container .transaction-header .see-all {
-  font-size: 14px;
-  color: #6b48ff;
+  font-size: 16px;
+  color: #4745a4;
   text-decoration: none;
   font-weight: 500;
 }
@@ -502,25 +513,30 @@ body {
   flex: 1;
 }
 .transaction-container .transaction-list .transaction-item .transaction-details .name {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d163a;
+  margin-bottom: 4px;
 }
 .transaction-container .transaction-list .transaction-item .transaction-details .date {
   font-size: 12px;
-  color: #888;
+  color: #0d163a;
+  letter-spacing: -1px;
+  opacity: 0.5;
 }
 .transaction-container .transaction-list .transaction-item .transaction-status {
   text-align: right;
 }
 .transaction-container .transaction-list .transaction-item .transaction-status .amount {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
-  color: #333;
+  color: #0d163a;
 }
 .transaction-container .transaction-list .transaction-item .transaction-status .status {
   font-size: 12px;
-  color: #28a745;
+  color: #3bbb6e;
+  letter-spacing: -1px;
+  font-weight: 600;
 }
 .transaction-container .transaction-list .transaction-item .transaction-status .status.completed {
   color: #28a745;
