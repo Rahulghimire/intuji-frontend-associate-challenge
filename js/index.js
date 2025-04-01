@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
           label: "Label1",
           data: [5000, 10000, 8000, 12000, 18000, 15000, 10000],
           borderColor: "rgb(71, 69, 164)",
-          backgroundColor: gradientLabel1,
+          backgroundColor: "rgba(90, 74, 245, 0.2)",
           fill: true,
           borderWidth: 3,
           tension: 0.4,
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
           label: "Label1",
           data: [3000, 6000, 4000, 8000, 10000, 7000, 5000], // Sample data for yellow line
           borderColor: "rgba(248, 205, 112, 1)",
-          backgroundColor: gradientLabel2,
+          backgroundColor: "rgba(245, 166, 35, 0.2)",
           fill: true,
           borderWidth: 3,
           tension: 0.4,
