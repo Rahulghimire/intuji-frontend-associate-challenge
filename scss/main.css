@@ -67,8 +67,8 @@
   border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
 }
 
-.card {
-  background: "";
+.card--saving .card {
+  background: #ffffff;
   color: white;
   border-radius: 14px;
   border: 1px solid rgba(222, 222, 222, 0.7);
@@ -76,27 +76,27 @@
   display: flex;
   flex-direction: column;
 }
-.card:hover {
+.card--saving .card:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease-in-out;
 }
-.card--balance {
+.card--saving .card--balance {
   display: flex;
   flex-direction: column;
 }
-.card__info {
+.card--saving .card__info {
   display: flex;
   flex-direction: column;
 }
-.card__comparison-icon {
+.card--saving .card__comparison-icon {
   margin-right: 4px;
 }
-.card__header {
+.card--saving .card__header {
   display: flex;
   align-items: center;
   gap: 9px;
 }
-.card__icon {
+.card--saving .card__icon {
   border: 1px solid rgba(222, 222, 222, 0.2);
   border-radius: 50%;
   display: flex;
@@ -104,33 +104,34 @@
   justify-content: center;
   padding: 8px;
 }
-.card__title {
+.card--saving .card__title {
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 9px;
+  color: #0d163a;
 }
-.card__comparison {
+.card--saving .card__comparison {
   display: flex;
   align-items: center;
-  color: #ffffff;
+  color: #0d163a;
   font-weight: 400;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 12px;
   opacity: 0.6;
 }
-.card__footer {
+.card--saving .card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.card__amount {
-  color: #fff;
+.card--saving .card__amount {
+  color: #0d163a;
   letter-spacing: -2px;
   font-size: 28px;
   font-weight: 600;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-.card__divider {
+.card--saving .card__divider {
   margin: 21.25px 0 21.25px 0;
   border: none;
   border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
