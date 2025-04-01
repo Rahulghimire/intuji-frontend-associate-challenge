@@ -69,6 +69,8 @@ body {
     }
 
     .dropdown {
+      display: flex;
+      gap: 32px;
       select {
         padding: 5px 10px;
         border: 1px solid #ddd;
@@ -77,10 +79,45 @@ body {
         font-size: 14px;
         cursor: pointer;
         outline: none;
+        color: rgba(124, 124, 124, 1);
 
         &:hover {
           background-color: #f0f0f0;
         }
+      }
+    }
+
+    .legend {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+
+        &.purple {
+          background-color: #4745a4;
+        }
+
+        &.yellow {
+          background-color: #f8cd70;
+        }
+      }
+
+      .label {
+        font-size: 14px;
+        color: rgba(13, 22, 58, 1);
+        font-weight: 500;
+        font-family: "Plus Jakarta Sans", sans-serif;
       }
     }
   }

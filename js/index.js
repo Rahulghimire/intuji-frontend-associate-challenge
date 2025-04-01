@@ -3,13 +3,13 @@ const currentDay = new Date().getDay();
 document.addEventListener("DOMContentLoaded", () => {
   const ctx = document.getElementById("analyticsChart").getContext("2d");
 
-  const gradientLabel1 = ctx.createLinearGradient(0, 0, 0, 400);
-  gradientLabel1.addColorStop(0, "rgba(71, 69, 164, 1)");
-  gradientLabel1.addColorStop(1, "rgba(71, 69, 164, 0)");
+  // const gradientLabel1 = ctx.createLinearGradient(0, 0, 0, 400);
+  // gradientLabel1.addColorStop(0, "rgba(71, 69, 164, 1)");
+  // gradientLabel1.addColorStop(1, "rgba(71, 69, 164, 0)");
 
-  const gradientLabel2 = ctx.createLinearGradient(0, 0, 0, 400);
-  gradientLabel2.addColorStop(0, "rgba(248, 205, 112, 1)");
-  gradientLabel2.addColorStop(1, "rgba(114, 76, 0, 0)");
+  // const gradientLabel2 = ctx.createLinearGradient(0, 0, 0, 400);
+  // gradientLabel2.addColorStop(0, "rgba(248, 205, 112, 1)");
+  // gradientLabel2.addColorStop(1, "rgba(114, 76, 0, 0)");
 
   new Chart(ctx, {
     type: "line",
@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           label: "Label1",
-          data: [3000, 6000, 4000, 8000, 10000, 7000, 5000], // Sample data for yellow line
+          data: [3000, 6000, 4000, 8000, 10000, 7000, 5000],
           borderColor: "rgba(248, 205, 112, 1)",
           backgroundColor: "rgba(245, 166, 35, 0.2)",
           fill: true,
-          borderWidth: 3,
+          borderWidth: 5,
           tension: 0.4,
           pointRadius: 0,
         },
@@ -71,17 +71,18 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       plugins: {
         legend: {
-          position: "top",
-          labels: {
-            usePointStyle: true,
-            padding: 30,
-            font: {
-              size: 8,
-              weight: "regular",
-              fontFamily: "Plus Jakarta Sans",
-            },
-            color: "#0D163A",
-          },
+          display: false,
+          // position: "right",
+          // labels: {
+          //   usePointStyle: true,
+          //   padding: 30,
+          //   font: {
+          //     size: 8,
+          //     weight: "regular",
+          //     fontFamily: "Plus Jakarta Sans",
+          //   },
+          //   color: "#0D163A",
+          // },
         },
       },
     },

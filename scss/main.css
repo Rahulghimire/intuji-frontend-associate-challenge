@@ -202,6 +202,10 @@ body {
   color: #0d163a;
   margin-bottom: 2rem;
 }
+.analytics .header .dropdown {
+  display: flex;
+  gap: 32px;
+}
 .analytics .header .dropdown select {
   padding: 5px 10px;
   border: 1px solid #ddd;
@@ -210,9 +214,38 @@ body {
   font-size: 14px;
   cursor: pointer;
   outline: none;
+  color: rgb(124, 124, 124);
 }
 .analytics .header .dropdown select:hover {
   background-color: #f0f0f0;
+}
+.analytics .header .legend {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.analytics .header .legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.analytics .header .legend .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.analytics .header .legend .dot.purple {
+  background-color: #4745a4;
+}
+.analytics .header .legend .dot.yellow {
+  background-color: #f8cd70;
+}
+.analytics .header .legend .label {
+  font-size: 14px;
+  color: rgb(13, 22, 58);
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 .analytics .chart-container {
   background-color: #fff;
