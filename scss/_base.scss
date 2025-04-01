@@ -18,6 +18,14 @@ $font-weight: (
   "bold": 700,
 );
 
+//color variables for saving plan
+$blue: #4a90e2;
+$orange: #f5a623;
+$green: #7ed321;
+$background: #f5f7fa;
+$text-primary: #333;
+$text-secondary: #888;
+
 // layout
 @mixin three-column-layout($left: 280px, $right: 350px, $gap: 32px) {
   display: grid;
